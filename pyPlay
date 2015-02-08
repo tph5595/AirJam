@@ -1,0 +1,16 @@
+import pygame
+import os.path
+start = False
+curNote = 0
+while(True):
+   if(os.path.isfile(str(curNote))):
+      f = open(str(curNote),'r') 
+      note = f.read()
+     # print(note)
+      start = True
+      pygame.mixer.init()
+      pygame.mixer.music.load(str(note))
+      pygame.mixer.music.play()
+     # os.remove(str(curNote))
+      curNote = curNote + 1
+   
